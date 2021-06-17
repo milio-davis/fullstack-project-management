@@ -16,6 +16,22 @@ router.post('/', async (req, res) => {
     res.status(201).send(JSON.stringify(req.body));
 })
 
+// Update
+router.put('/:id', async (req, res) => {
+    console.info(`UPDATE Request`)
+    const proyectos = await cargarColeccionProyectos();
+    // logic
+})
+
+// Delete
+router.delete('/:id', async (req, res) => {
+    console.info(`DELETE Request`)
+    const proyectos = await cargarColeccionProyectos();
+    const {id} = req.params;
+    await proyectos.deleteOne({id})
+    res.status(200).send(`Eliminado ${id}`)
+})
+
 // tasks collection db connection
 async function cargarColeccionProyectos() {
     const connectionString = 'mongodb+srv://admin:admin@tasksdb.shsak.mongodb.net/tasks?retryWrites=true&w=majority'
