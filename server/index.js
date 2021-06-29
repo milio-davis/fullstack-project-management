@@ -8,8 +8,15 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const tasks = require('./routes/api/proyectos');
-app.use('/api/proyectos', tasks)
+const proyectos = require('./routes/api/proyectos');
+app.use('/api/proyectos', proyectos)
+
+const categorias = require('./routes/api/categorias');
+app.use('/api/categorias', categorias)
+
+const integrantes = require('./routes/api/integrantes');
+app.use('/api/integrantes', integrantes)
+
 
 if (process.env.NODE_ENV === 'production') {
     // Static folder

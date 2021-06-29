@@ -1,4 +1,4 @@
 [submodule "vuetify-proyect-management"]
 	path = vuetify-proyect-management
 	url = https://github.com/guidoponzio/vuetify-proyect-management.git
-	branch = emi
+	branch = main
